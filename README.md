@@ -50,6 +50,9 @@ Refer to the diagram above for the overall workflow.
 - Example: Given the question “Where does Ravi currently study?”, PIRS retrieves relevant context and lets the LLM respond accurately (e.g., “Ravi currently studies in Kathmandu Engineering College”).
 - Provides precise, context-aware answers by integrating retrieval and generation steps.
 
+<img width="1028" height="712" alt="image" src="https://github.com/user-attachments/assets/4be39daf-2a31-4f5b-a142-c332bd23c63f" />
+
+
 ## Extending the System
 
 PIRS is modular and can be adapted to other domains or individuals by updating the source data and embeddings. The retrieval and generation pipeline remains the same, ensuring flexibility and scalability.
