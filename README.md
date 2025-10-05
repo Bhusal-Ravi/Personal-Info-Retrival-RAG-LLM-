@@ -1,16 +1,70 @@
-# React + Vite
+# Person Info Retrieval System (PIRS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![PIRS System Diagram](<img width="1920" height="1080" alt="PIRS" src="https://github.com/user-attachments/assets/4b02b226-55a3-4d66-b73d-f2ac369594dc" />
+)
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Person Info Retrieval System (PIRS) is an advanced Retrieval-Augmented Generation (RAG) application designed to answer queries about Ravi Bhusal by referencing his vectorized personal data. This system leverages modern AI and vector database technologies to deliver accurate, context-aware responses.
 
-## React Compiler
+## What is RAG?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+RAG stands for Retrieval-Augmented Generation. It is an AI architecture that combines the strengths of retrieval systems (which fetch relevant documents or data chunks) with generative models (which can produce natural language responses). In a RAG system, the user's query is used to retrieve pertinent information from a knowledge base, and a language model uses both the query and the retrieved content to generate an informed answer.
 
-## Expanding the ESLint configuration
+## System Architecture
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The system operates as follows:
+1. **Personal Information** about Ravi Bhusal is chunked and encoded using an embedding model.
+2. **Vector Database (Pinecone)** stores these embeddings for efficient semantic search.
+3. **Retrieval Module** fetches relevant data chunks from the vector database based on user queries.
+4. **LLM (Large Language Model)** receives both the user query and retrieved context, generating an accurate answer.
+
+Refer to the diagram above for the overall workflow.
+
+## Technologies Used
+
+- **LangChain**
+  - `textsplitter`
+  - Embedding model interface
+  - Vector database interface
+
+- **Hugging Face**  
+  - Embedding Model: `BAAI/bge-base-en-v1.5` (768 dimensions)
+
+- **LLM via Groq SDK**
+  - Model: `llama-3.3-70b-versatile`
+
+- **Vector Database**
+  - Pinecone
+
+- **Frontend**
+  - React
+
+- **Backend**
+  - Node.js
+
+## What Can PIRS Do?
+
+- Answers questions about Ravi Bhusal by referencing his personal vectorized data stored in Pinecone.
+- Example: Given the question “Where does Ravi currently study?”, PIRS retrieves relevant context and lets the LLM respond accurately (e.g., “Ravi currently studies in Kathmandu Engineering College”).
+- Provides precise, context-aware answers by integrating retrieval and generation steps.
+
+## Extending the System
+
+PIRS is modular and can be adapted to other domains or individuals by updating the source data and embeddings. The retrieval and generation pipeline remains the same, ensuring flexibility and scalability.
+
+## How to Run
+
+1. Ensure you have configured Pinecone, Hugging Face access, and a Groq API key.
+2. Start the backend (Node.js) server.
+3. Launch the frontend (React) app.
+4. Interact with the system through the web interface to query Ravi Bhusal’s information.
+
+## Customization
+
+- You can add more personal data for Ravi Bhusal to enhance answers.
+- The embedding model and LLM are configurable for different use cases or languages.
+
+---
+
+This repository delivers a modern RAG solution for personal information retrieval, demonstrating how advanced AI and vector search can provide fact-based answers about individuals.
