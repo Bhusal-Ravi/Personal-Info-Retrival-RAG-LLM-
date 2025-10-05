@@ -1,7 +1,8 @@
-# Person Info Retrieval System (PIRS)
+Person Info Retrieval System (PIRS)
 
-![PIRS System Diagram](<img width="1920" height="1080" alt="PIRS" src="https://github.com/user-attachments/assets/4b02b226-55a3-4d66-b73d-f2ac369594dc" />
-)
+<img width="1920" height="1080" alt="PIRS" src="https://github.com/user-attachments/assets/bfcf9382-ec30-47e8-bfe4-a71c1e45763b" />
+
+
 
 ## Overview
 
